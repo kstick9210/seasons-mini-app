@@ -1,20 +1,27 @@
 .SeasonDisplay {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    padding: 20px;
 }
 
 .icon-left {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    align-self: flex-start;
 }
 
 .icon-right {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    align-self: flex-end;
+}
+
+h1 {
+    padding: 10px;
+}
+
+.SeasonDisplay.spring > i {
+    color: plum;
 }
 
 .SeasonDisplay.winter > i {
@@ -22,7 +29,11 @@
 }
 
 .SeasonDisplay.summer > i {
-    color: red;
+    color: orangered;
+}
+
+.SeasonDisplay.fall > i {
+    color: darkorange;
 }
 
 .winter {
@@ -30,5 +41,13 @@
 }
 
 .summer {
-    background-color: orange;
+    background-color: gold;
+}
+
+.spring {
+    background-color: skyblue;
+}
+
+.fall {
+    background-color: darkgoldenrod;
 }

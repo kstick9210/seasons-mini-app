@@ -2,19 +2,31 @@ import React from 'react';
 import './SeasonDisplay.css';
 
 const seasonConfig = {
+    spring: {
+        text: '"Spring adds new life and new beauty to all that is." - Jessica Harrelson',
+        iconName: 'umbrella'
+    },
     summer: {
-        text: 'It is summer',
+        text: '"Summertime is always the best of what might be." - Charles Bowden',
         iconName: 'sun'
     },
+    fall: {
+        text: '"Life starts all over again when it gets crisp in the fall." - F. Scott Fitzgerald',
+        iconName: 'leaf'
+    },
     winter: {
-        text: 'brr it is cold',
+        text: '"Winter forms our character and brings out our best." - Tom Allen',
         iconName: 'snowflake'
     }
 };
 
 const getSeason = (lat, month) => {
-    if (month > 2 && month < 9) {
+    if (month > 1 && month <= 4) {
+        return lat > 0 ? 'spring' : 'fall';
+    } else if (month > 4 && month <= 7) {
         return lat > 0 ? 'summer' : 'winter';
+    } else if (month > 7 && month <= 10) {
+        return lat > 0 ? 'fall' : 'spring';
     } else {
         return lat > 0 ? 'winter' : 'summer';
     }
