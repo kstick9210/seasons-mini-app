@@ -20,7 +20,7 @@ class App extends Component {
         if (!this.state.errorMessage && this.state.lat) {
             return <SeasonDisplay lat={this.state.lat}/>
         }
-        return <Spinner />
+        return <Spinner message="Allow location services before application can proceed"/>
     }
 }
 
